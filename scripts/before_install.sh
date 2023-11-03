@@ -1,1 +1,1 @@
-sudo service apache2 stop
+sudo apt install apache2 
