@@ -4,9 +4,6 @@ phases:
   install:
     commands:
        - echo "CODE BUILD PART"
-         touch a
-         touch b
-         mkdir demo
   
   pre_build:
     commands:
