@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+       - echo "CODE BUILD PART"
+  
+  pre_build:
+    commands:
+       - echo " prebuild part "
+       
+  build:
+    commands:
+       - echo "build part "
+      
+  post_build:
+    commands:
+       - echo "post build "
+       
+artifacts:
+  files:
+  - "**/*"
