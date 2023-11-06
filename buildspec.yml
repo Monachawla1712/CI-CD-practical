@@ -12,6 +12,7 @@ phases:
          export DB_USER=$(aws ssm get-parameter --name /DB/USER --with-decryption --query "Parameter.Value" --output text)
          export DB_PASSWORD=$(aws ssm get-parameter --name /DB/PASSWORD --with-decryption --query "Parameter.Value" --output text)
          export DB_HOST=$(aws ssm get-parameter --name /DB/HOST --with-decryption --query "Parameter.Value" --output text)
+         
 
                  
   build:
