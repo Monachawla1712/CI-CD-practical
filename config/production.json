@@ -1,0 +1,7 @@
+{
+  DB_NAME="wordpress1",
+  DB_USER="monauser",
+  DB_PASSWORD="Mona1712?",
+  DB_HOST= 10.0.0.211
+}
+  
