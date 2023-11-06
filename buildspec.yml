@@ -10,8 +10,7 @@ phases:
        - echo " prebuild part "
          chmod +x ./build_scripts/configuration.sh
          sh ./build_scripts/configuration.sh
-       
-       
+             
   build:
     commands:
        - echo "build part "
@@ -19,6 +18,7 @@ phases:
   post_build:
     commands:
        - echo "post build "
+         echo "post post build"
        
 artifacts:
   files:
