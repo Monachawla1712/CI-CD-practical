@@ -8,6 +8,9 @@ phases:
   pre_build:
     commands:
        - echo " prebuild part "
+       - chmod +x ./build_scripts/configuration.sh
+       - sh ./build_scripts/configuration.sh
+       
        
   build:
     commands:
