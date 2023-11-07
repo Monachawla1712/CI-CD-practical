@@ -15,7 +15,7 @@ phases:
     commands:
       - SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:ap-south-1:800462127340:secret:mydatabase_secrets-k97AKz --query SecretString)
       - SECRET_VALUE=$(echo "$SECRET_JSON" | jq -r .)
-      - echo "$SECRET_VALUE" > a.txt
+      - echo "$SECRET_VALUE" 
 
   post_build:
     commands:
