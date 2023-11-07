@@ -1,4 +1,8 @@
 version: 0.2
+env:
+  shell: bash
+  secrets-manager:
+    key: aws:secretsmanager:ap-south-1:Databasename:800462127340:AWSCURRENT:5b9d880a-8c5d-404f-a314-c2aa99963c78"
 
 phases:
   install:
@@ -8,23 +12,16 @@ phases:
   pre_build:
     commands:
        - echo " prebuild part "
-         export Databasename=$(aws ssm get-parameter --name /DB/NAME --with-decryption --query "Parameter.Value" --output text)
-         export User=$(aws ssm get-parameter --name /DB/USER --with-decryption --query "Parameter.Value" --output text)
-         export Password=$(aws ssm get-parameter --name /DB/PASSWORD --with-decryption --query "Parameter.Value" --output text)
-         export Host=$(aws ssm get-parameter --name /DB/HOST --with-decryption --query "Parameter.Value" --output text)
-         
-                
+        
   build:
     commands:
-       - echo "build part "
-         chmod +x ./scripts/before_install.sh
-         ./scripts/before_install.sh
+     - SECRET_VALUE=$(aws secretsmanager get-secret-value --secret-id "aws:secretsmanager:ap-south-1:Databasename:800462127340:AWSCURRENT:5b9d880a-8c5d-404f-a314-c2aa99963c78" --query 'SecretString' --output text)
+       export MY_SECRET=$SECRET_VALUE
 
   post_build:
     commands:
        - echo "post build "
-         echo "post post build"
-       
+               
 artifacts:
   files:
   - "**/*"
