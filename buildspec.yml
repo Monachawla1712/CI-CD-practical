@@ -15,7 +15,7 @@ phases:
         
   build:
     commands:
-     - SECRET_VALUE=$(aws secretsmanager get-secret-value --secret-id "arn:aws:secretsmanager:ap-south-1:800462127340:secret:mydatabase_secrets-k97AKz" --query 'SecretString' --output text)
+     - SECRET_VALUE=$(aws secretsmanager get-secret-value --secret-id "arn:aws:secretsmanager:ap-south-1:800462127340:secret:mydatabase_secrets-k97AKz" --query SecretString --output text)
        # export MY_SECRET=$SECRET_VALUE
      - echo $SECRET_VALUE
 
