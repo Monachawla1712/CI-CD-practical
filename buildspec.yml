@@ -2,7 +2,8 @@ version: 0.2
 env:
   shell: bash
   secrets-manager:
-    key: "arn:aws:secretsmanager:ap-south-1:800462127340:secret:mydatabase_secrets-k97AKz"
+    key: "aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:ap-south-1:800462127340:secret:mydatabase_secrets-k97AKz"
+
 
 phases:
   install:
