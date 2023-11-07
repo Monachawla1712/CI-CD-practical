@@ -2,7 +2,7 @@ version: 0.2
 env:
   shell: bash
   secrets-manager:
-    key: aws:secretsmanager:ap-south-1:Databasename:800462127340:AWSCURRENT:5b9d880a-8c5d-404f-a314-c2aa99963c78"
+    key: "arn:aws:secretsmanager:ap-south-1:800462127340:secret:mydatabase_secrets-k97AKz"
 
 phases:
   install:
@@ -15,7 +15,7 @@ phases:
         
   build:
     commands:
-     - SECRET_VALUE=$(aws secretsmanager get-secret-value --secret-id "aws:secretsmanager:ap-south-1:Databasename:800462127340:AWSCURRENT:5b9d880a-8c5d-404f-a314-c2aa99963c78" --query 'SecretString' --output text)
+     - SECRET_VALUE=$(aws secretsmanager get-secret-value --secret-id "arn:aws:secretsmanager:ap-south-1:800462127340:secret:mydatabase_secrets-k97AKz" --query 'SecretString' --output text)
        # export MY_SECRET=$SECRET_VALUE
      - echo $SECRET_VALUE
 
