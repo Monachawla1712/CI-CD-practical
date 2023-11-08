@@ -10,15 +10,16 @@ phases:
   pre_build:
     commands:
       - echo "prebuild part"
-
-  build:
-    commands:
-      - SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:ap-south-1:800462127340:secret:mydatabase_secrets-k97AKz --query SecretString)
+        SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:ap-south-1:800462127340:secret:mydatabase_secrets-k97AKz --query SecretString)
         HOST=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_HOST')
         USER=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_USER')
         PASSWORD=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_PASSWORD')
         NAME=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_NAME')
 
+  build:
+    commands:
+      - echo "build stage"
+     
   post_build:
     commands:
       - echo "post build"
