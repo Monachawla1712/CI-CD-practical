@@ -19,7 +19,8 @@ phases:
 
   build:
     commands:
-      - echo "build stage"
+      - echo "Build stage"
+      
      
   post_build:
     commands:
