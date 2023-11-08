@@ -14,10 +14,10 @@ phases:
   build:
     commands:
       - SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:ap-south-1:800462127340:secret:mydatabase_secrets-k97AKz --query SecretString)
-        DB_HOST=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_HOST')
-        DB_USER=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_USER')
-        DB_PASSWORD=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_PASSWORD')
-        DB_NAME=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_NAME')
+        HOST=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_HOST')
+        USER=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_USER')
+        PASSWORD=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_PASSWORD')
+        NAME=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_NAME')
 
   post_build:
     commands:
