@@ -18,8 +18,8 @@ phases:
   build:
     commands:
       - echo "Build stage"
-      - chmod +x ./scripts/build.sh
-      - ./scripts/build.sh
+      - chmod +x ./scripts/builld.sh
+      - ./scripts/builld.sh
       
      
   post_build:
