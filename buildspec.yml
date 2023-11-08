@@ -9,17 +9,17 @@ phases:
   
   pre_build:
     commands:
-      - echo "prebuild part"
-      - |
-        SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:ap-south-1:800462127340:secret:mydatabase_secrets-k97AKz --query SecretString)
-        HOST=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_HOST')
-        USER=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_USER')
-        PASSWORD=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_PASSWORD')
-        NAME=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_NAME')
+        - SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:ap-south-1:800462127340:secret:mydatabase_secrets-k97AKz --query SecretString)
+        - export HOST=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_HOST')
+        - export USER=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_USER')
+        - export PASSWORD=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_PASSWORD')
+        - export NAME=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_NAME')
 
   build:
     commands:
       - echo "Build stage"
+      - chmod +x ./scripts/build.sh
+      - ./scripts/build.sh
       
      
   post_build:
