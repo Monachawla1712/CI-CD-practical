@@ -3,10 +3,6 @@ env:
   shell: bash
 
 phases:
-  install:
-    commands:
-      - echo "CODE BUILD PART"
-  
   pre_build:
     commands:
         - SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:ap-south-1:800462127340:secret:mydatabase_secrets-k97AKz --query SecretString)
