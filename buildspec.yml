@@ -20,7 +20,7 @@ phases:
      
   post_build:
     commands:
-      - echo "post build part "
+      - echo "post build "
 
 artifacts:
   files:
