@@ -48,18 +48,7 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-/**define( 'AUTH_KEY',         ']m:9J1a, ik!ln]@|=Kl|@(3;MrEd;J*TKV1-@^N|Jh`cS+NB#@|pu^N+s&!+6F2' );
-define( 'SECURE_AUTH_KEY',  'hna$ |nhQHl<!9Bc+i9)XR&GHGQc)0i2&$sdcjPDc<GmP|-elxvs{UP*,j7y1{ K' );
-define( 'LOGGED_IN_KEY',    '`iFeg/_dqnuT=d0kDhLJ&Ap;#w%1LjZx7I(;S( _Xc=?5tvt{i_2mVm#%HIgUbrf' );
-define( 'NONCE_KEY',        'e7O6`{vsH. |]wIf,tEApgc8wtMnQYjeP$x[e-5&g)yu=Fmg7.PW3)AoA*4jR,rS' );
-define( 'AUTH_SALT',        'S}t$FZtHOS4|U&)=@nuRwu}b-;[1L8}=~V)W:!m]f,<FF_a#}r48M_n(eIB(=}=}' );
-define( 'SECURE_AUTH_SALT', '=v`~pr8H+}vUgv5}*<A(;.x*T^]F7/[7a&!svr:XnLV/~f}d)nc` :1_ICvU<uyv' );
-define( 'LOGGED_IN_SALT',   'Lbj^ORz&T&MGAXFS=@m^|g+_:@w4jEc_cRXIl1]<)-aC0 Mn#l8_?+ZKw{-`|`Em' );
-define( 'NONCE_SALT',       '71R*k-W6[&|p]%9[F)ea&Mwp.BKiXX=Econ(V6AQwR]]ClPD,/>[1fOD8Mj-G;q3' );
-define('WP_HOME','http://lb-wp-2114640141.ap-south-1.elb.amazonaws.com/');
-define('WP_SITEURL','http://lb-wp-2114640141.ap-south-1.elb.amazonaws.com/');
 
-*/
 
 /**#@-*/
 
