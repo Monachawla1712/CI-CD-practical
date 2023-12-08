@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-private_ip=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=new_db" --query "Reservations[0].Instances[0].PrivateIpAddress" --output text)
-sudo sed -i "s/^.*DB_HOST.*$/define('DB_HOST', '$private_ip');/" /var/www/html/wp-config.php
+# private_ip=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=new_db" --query "Reservations[0].Instances[0].PrivateIpAddress" --output text)
+# sudo sed -i "s/^.*DB_HOST.*$/define('DB_HOST', '$private_ip');/" /var/www/html/wp-config.php
 
 
 # Start the Apache service if it's not running
