@@ -5,8 +5,7 @@ env:
 phases:
   pre_build:
     commands:
-        - SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:ap-south-1:800462127340:secret:mydatabase_secrets-k97AKz --query SecretString)
-        - export HOST=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_HOST')
+        - SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:us-east-1:551608844195:secret:Database_credentials-QFzmga --query SecretString)
         - export USER=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_USER')
         - export PASSWORD=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_PASSWORD')
         - export NAME=$(echo "$SECRET_JSON" | jq -r 'fromjson | .DB_NAME')
